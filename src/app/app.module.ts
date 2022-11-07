@@ -16,6 +16,10 @@ import { NoPermissionScreenComponent } from './components/screens/no-permission-
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { CreateQuestionnaireScreenComponent } from './components/screens/create-questionnaire-screen/create-questionnaire-screen.component';
+import { AllQuestionnairesScreenComponent } from './components/screens/all-questionnaires-screen/all-questionnaires-screen.component';
+import { SingleQuestionnaireScreenComponent } from './components/screens/single-questionnaire-screen/single-questionnaire-screen.component';
+import { AnswerQuestionnaireScreenComponent } from './components/screens/answer-questionnaire-screen/answer-questionnaire-screen.component';
 
 
 
@@ -29,6 +33,10 @@ import { MatButtonModule } from '@angular/material/button';
     HomeScreenComponent,
     ErrorScreenComponent,
     NoPermissionScreenComponent,
+    CreateQuestionnaireScreenComponent,
+    AllQuestionnairesScreenComponent,
+    SingleQuestionnaireScreenComponent,
+    AnswerQuestionnaireScreenComponent,
   ],
   imports: [
     BrowserModule,
