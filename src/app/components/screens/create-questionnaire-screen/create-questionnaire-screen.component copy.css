@@ -9,13 +9,20 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 400px;
-  padding: 40px;
+  width: 750px;
+  padding: 30px;
   transform: translate(-50%, -50%);
   background: rgba(0, 0, 0, 0.5);
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   border-radius: 10px;
+  margin-top: 10px;
+}
+
+@media only screen and (max-width: 800px) {
+  .login-box {
+    width: 500px;
+  }
 }
 
 @media only screen and (max-width: 550px) {
@@ -171,11 +178,7 @@ body {
   }
 }
 
-.bottom-text{
-  color: white;
-  margin-right: 10px;
-}
-
-.bottom-button{
-  color: white;
+.single-question{
+  border-style: dotted;
+  padding: 20px;
 }

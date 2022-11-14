@@ -1,3 +1,4 @@
+import { AuthService, GlobalAuth } from './../../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -9,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class AnswerQuestionnaireScreenComponent implements OnInit {
   id: string | undefined
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute,) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id')!

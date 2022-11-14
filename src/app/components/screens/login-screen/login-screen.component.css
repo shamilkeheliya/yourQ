@@ -18,6 +18,12 @@ body {
   border-radius: 10px;
 }
 
+@media only screen and (max-width: 550px) {
+  .login-box {
+    width: 90%;
+  }
+}
+
 .login-box h2 {
   margin: 0 0 30px;
   padding: 0;
@@ -163,4 +169,13 @@ body {
   100% {
     bottom: 100%;
   }
+}
+
+.bottom-text{
+  color: white;
+  margin-right: 10px;
+}
+
+.bottom-button{
+  color: white;
 }

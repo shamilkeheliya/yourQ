@@ -5,15 +5,23 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
+  isAuthenticatedUser: boolean = false;
 
   constructor() { }
 
   isAuthenticated():boolean {
-    //return this.http.get('/auth/isAuthenticated');
-    return true;
+    return this.isAuthenticatedUser;
   }
+
+  
 
   getUserID():string{
     return '';
   }
+
+}
+
+
+export class GlobalAuth{
+  public static golbalAuth: AuthService = new AuthService();
 }
