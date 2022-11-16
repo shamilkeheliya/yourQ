@@ -17,11 +17,11 @@ const routes: Routes = [
   { path: 'Login', component: LoginScreenComponent },
   { path: 'Create-Account', component: CreateAccountScreenComponent },
 
-  { path: 'Create-Questionnaire', component: CreateQuestionnaireScreenComponent, canActivate: [AuthGuard] },
-  { path: ':id', component: AnswerQuestionnaireScreenComponent, canActivate: [AuthGuard] },
-
   { path: 'View/:id', component: SingleQuestionnaireScreenComponent, canActivate: [AuthGuard] },
   { path: 'All/:uid', component: AllQuestionnairesScreenComponent, canActivate: [AuthGuard] },
+
+  { path: 'Create-Questionnaire', component: CreateQuestionnaireScreenComponent, canActivate: [AuthGuard] },
+  { path: ':id', component: AnswerQuestionnaireScreenComponent, canActivate: [AuthGuard] },
 
   { path: '**', component: ErrorScreenComponent}
 ];

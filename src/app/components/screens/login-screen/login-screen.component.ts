@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login-screen',
@@ -10,6 +11,11 @@ export class LoginScreenComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+  }
+
+  onClickLogin(form: NgForm){
+    console.log(form.value.email);
   }
 
 }

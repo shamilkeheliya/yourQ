@@ -2,8 +2,13 @@
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+
 export const environment = {
-  production: false
+  production: false,
+  env : {
+    API_URL: 'localhost:5000/api/',
+    API_KEY: '!b+6W.$@PKzopN%+6n+6VWT.,_|KzopN%+6W.$@PKzopN%+6n+6V+KzopN%+66@sNL,+iKzopNK+6W.$@PKzopN%+6n+6VzopN%+6%+6VZ*aq1BE6?1f>_f_AaU*VKzopNKzoKzopN%+6pN%+6%+6W.$@PKzopN%+6n+6VZ*aq+6W.$@PKzopN%+6n+6V+6VZ*aq1BE6?1f>_f_AaU*VKzopN1BE6?1f>_f_AaU*VKzopN^',
+  }
 };
 
 /*
