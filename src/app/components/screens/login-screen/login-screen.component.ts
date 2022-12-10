@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+import { UserModel } from 'src/app/models/user-model';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login-screen',
@@ -8,14 +12,35 @@ import { NgForm } from '@angular/forms';
 })
 export class LoginScreenComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private snackBar: MatSnackBar,
+    private userModel: UserModel,
+    private authService: AuthService,
+    private router: Router,
+    ) { }
 
   ngOnInit(): void {
 
   }
 
   onClickLogin(form: NgForm){
-    console.log(form.value.email);
+    if(form.value.email == ''){
+      this.snackBar.open(
+        'Email cannot empty!',
+        'OK',
+        { duration: 2000 },
+      );
+      return;
+    }
+
+    if(form.value.password == ''){
+      this.snackBar.open(
+        'Password cannot empty!',
+        'OK',
+        { duration: 2000 },
+      );
+      return;
+    }
   }
 
 }
