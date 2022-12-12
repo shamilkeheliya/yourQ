@@ -4,11 +4,13 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { UserModel } from 'src/app/models/user-model';
 import { AuthService } from 'src/app/services/auth.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login-screen',
   templateUrl: './login-screen.component.html',
-  styleUrls: ['./login-screen.component.css']
+  styleUrls: ['./login-screen.component.css'],
+  providers: [UserModel],
 })
 export class LoginScreenComponent implements OnInit {
 
@@ -17,13 +19,16 @@ export class LoginScreenComponent implements OnInit {
     private userModel: UserModel,
     private authService: AuthService,
     private router: Router,
+    private cookieService: CookieService,
     ) { }
 
   ngOnInit(): void {
 
   }
 
-  onClickLogin(form: NgForm){
+
+
+  async onClickLogin(form: NgForm){
     if(form.value.email == ''){
       this.snackBar.open(
         'Email cannot empty!',
@@ -41,6 +46,29 @@ export class LoginScreenComponent implements OnInit {
       );
       return;
     }
-  }
 
+    this.userModel.email = form.value.email;
+    this.userModel.password = form.value.password;
+
+    (await this.authService.loginUser(this.userModel)).subscribe((response) => {
+
+      if (response.status == 200) {
+        this.snackBar.open(
+          'Logged in Successfully!',
+          'OK',
+          { duration: 2000 }
+        );
+
+        const data: any = response.body;
+        const userid: string = data?.uid;
+
+        this.cookieService.set('uid', userid);
+        this.router.navigate(['Dashboard']);
+
+        return;
+      }
+
+    });
+
+  }
 }

@@ -3,142 +3,155 @@
 
   <div class="login-box" style="text-align: center;">
     <h2>Create Questionnaire</h2>
-    <form>
+    <form (submit)="onClickCreate(form)" #form = ngForm>
+
+      <!-- Title -->
+      <div class="single-question">
+        <div class="user-box">
+          <input type="text" name="title" required="" ngModel>
+          <label>Questionnaire Title</label>
+        </div>
+      </div>
 
       <!-- Question 1 -->
       <div class="single-question">
+        <div class="question">QUESTION 1</div>
         <div class="user-box">
-          <input type="text" name="" required="">
+          <input type="text" name="question1" required="" ngModel>
           <label>Question 1</label>
         </div>
 
         <div class="user-box">
-          <input type="text" name="" required="">
+          <input type="text" name="q1a" required="" ngModel>
           <label>Correct Answer</label>
         </div>
         <div class="user-box">
-          <input type="text" name="" required="">
+          <input type="text" name="q1w1" required="" ngModel>
           <label>Wrong Answer 1</label>
         </div>
         <div class="user-box">
-          <input type="text" name="" required="">
+          <input type="text" name="q1w2" required="" ngModel>
           <label>Wrong Answer 2</label>
         </div>
         <div class="user-box">
-          <input type="text" name="" required="">
+          <input type="text" name="q1w3" required="" ngModel>
           <label>Wrong Answer 3</label>
         </div>
       </div>
 
       <!-- Question 2 -->
       <div class="single-question">
+        <div class="question">QUESTION 2</div>
         <div class="user-box">
-          <input type="text" name="" required="">
+          <input type="text" name="question2" required="" ngModel>
           <label>Question 2</label>
         </div>
 
         <div class="user-box">
-          <input type="text" name="" required="">
+          <input type="text" name="q2a" required="" ngModel>
           <label>Correct Answer</label>
         </div>
         <div class="user-box">
-          <input type="text" name="" required="">
+          <input type="text" name="q2w1" required="" ngModel>
           <label>Wrong Answer 1</label>
         </div>
         <div class="user-box">
-          <input type="text" name="" required="">
+          <input type="text" name="q2w2" required="" ngModel>
           <label>Wrong Answer 2</label>
         </div>
         <div class="user-box">
-          <input type="text" name="" required="">
+          <input type="text" name="q2w3" required="" ngModel>
           <label>Wrong Answer 3</label>
         </div>
       </div>
 
       <!-- Question 3 -->
       <div class="single-question">
+        <div class="question">QUESTION 3</div>
         <div class="user-box">
-          <input type="text" name="" required="">
+          <input type="text" name="question3" required="" ngModel>
           <label>Question 3</label>
         </div>
 
         <div class="user-box">
-          <input type="text" name="" required="">
+          <input type="text" name="q3a" required="" ngModel>
           <label>Correct Answer</label>
         </div>
         <div class="user-box">
-          <input type="text" name="" required="">
+          <input type="text" name="q3w1" required="" ngModel>
           <label>Wrong Answer 1</label>
         </div>
         <div class="user-box">
-          <input type="text" name="" required="">
+          <input type="text" name="q3w2" required="" ngModel>
           <label>Wrong Answer 2</label>
         </div>
         <div class="user-box">
-          <input type="text" name="" required="">
+          <input type="text" name="q3w3" required="" ngModel>
           <label>Wrong Answer 3</label>
         </div>
       </div>
 
       <!-- Question 4 -->
       <div class="single-question">
+        <div class="question">QUESTION 4</div>
         <div class="user-box">
-          <input type="text" name="" required="">
+          <input type="text" name="question4" required="" ngModel>
           <label>Question 4</label>
         </div>
 
         <div class="user-box">
-          <input type="text" name="" required="">
+          <input type="text" name="q4a" required="" ngModel>
           <label>Correct Answer</label>
         </div>
         <div class="user-box">
-          <input type="text" name="" required="">
+          <input type="text" name="q4w1" required="" ngModel>
           <label>Wrong Answer 1</label>
         </div>
         <div class="user-box">
-          <input type="text" name="" required="">
+          <input type="text" name="q4w2" required="" ngModel>
           <label>Wrong Answer 2</label>
         </div>
         <div class="user-box">
-          <input type="text" name="" required="">
+          <input type="text" name="q4w3" required="" ngModel>
           <label>Wrong Answer 3</label>
         </div>
       </div>
 
       <!-- Question 5 -->
       <div class="single-question">
+        <div class="question">QUESTION 5</div>
         <div class="user-box">
-          <input type="text" name="" required="">
+          <input type="text" name="question5" required="" ngModel>
           <label>Question 5</label>
         </div>
 
         <div class="user-box">
-          <input type="text" name="" required="">
+          <input type="text" name="q5a" required="" ngModel>
           <label>Correct Answer</label>
         </div>
         <div class="user-box">
-          <input type="text" name="" required="">
+          <input type="text" name="q5w1" required="" ngModel>
           <label>Wrong Answer 1</label>
         </div>
         <div class="user-box">
-          <input type="text" name="" required="">
+          <input type="text" name="q5w2" required="" ngModel>
           <label>Wrong Answer 2</label>
         </div>
         <div class="user-box">
-          <input type="text" name="" required="">
+          <input type="text" name="q5w3" required="" ngModel>
           <label>Wrong Answer 3</label>
         </div>
       </div>
 
 
 
-      <a href="#">
+      <button>
         <span></span>
         <span></span>
         <span></span>
         <span></span>
-        Create
-      </a>
+        Create Questionnaire
+      </button>
     </form>
   </div>
 

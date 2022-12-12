@@ -16,7 +16,8 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarScroll">
+    <!--If user not logged in show this-->
+    <div *ngIf="!isLoggedIn" class="collapse navbar-collapse" id="navbarScroll">
       <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/Create-Account">Create Account</a>
@@ -26,5 +27,19 @@
         </li>
       </ul>
     </div>
+
+    <!--If user logged in show this-->
+    <div *ngIf="isLoggedIn" class="collapse navbar-collapse" id="navbarScroll">
+      <ul class="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/Dashboard">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" role="button" (click)="onClickLogOut()">LogOut</a>
+        </li>
+      </ul>
+    </div>
+
+
   </div>
 </nav>

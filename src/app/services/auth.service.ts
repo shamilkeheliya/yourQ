@@ -1,27 +1,31 @@
-import { MatSnackBar } from '@angular/material/snack-bar';
 import { environment } from './../../environments/environment.prod';
 import { UserModel } from './../models/user-model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
+
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class AuthService {
-  isAuthenticatedUser: boolean = false;
-  userID: string = '';
 
   response: any | undefined;
 
-  constructor(private http: HttpClient, private snackBar: MatSnackBar) {}
+  constructor(
+    private http: HttpClient,
+    private cookieService: CookieService,
+    private router: Router,
+    ) {}
 
   isAuthenticated():boolean {
-    return this.isAuthenticatedUser;
+    return this.cookieService.get('uid') != '';
   }
 
   getUserID():string{
-    return this.userID;
+    return this.cookieService.get('uid');
   }
 
   async createUser(userModel: UserModel){
@@ -49,6 +53,12 @@ export class AuthService {
             observe: 'response',
       },
     );
+  }
+
+  logoutUser(){
+    this.cookieService.delete('uid');
+    this.cookieService.deleteAll();
+    this.router.navigate(['/Login']);
   }
 
 }
