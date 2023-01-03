@@ -5,18 +5,18 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon src/index.js"
+    "start": "nodemon express-backend/index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shamilkeheliya/yourQ-API.git"
+    "url": "git+https://github.com/shamilkeheliya/yourQ.git"
   },
   "author": "Shamil Keheliya Muhandiram",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/shamilkeheliya/yourQ-API/issues"
+    "url": "https://github.com/shamilkeheliya/yourQ/issues"
   },
-  "homepage": "https://github.com/shamilkeheliya/yourQ-API#readme",
+  "homepage": "https://github.com/shamilkeheliya/yourQ#readme",
   "dependencies": {
     "bcrypt": "^5.1.0",
     "body-parser": "^1.20.1",
