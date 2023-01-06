@@ -13,6 +13,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatTableModule } from '@angular/material/table';
+import {MatListModule} from '@angular/material/list';
+import { ClipboardModule } from '@angular/cdk/clipboard';
 
 import { HomeScreenComponent } from './components/screens/home-screen/home-screen.component';
 import { ErrorScreenComponent } from './components/screens/error-screen/error-screen.component';
@@ -24,6 +27,7 @@ import { CreateQuestionnaireScreenComponent } from './components/screens/create-
 import { SingleQuestionnaireScreenComponent } from './components/screens/single-questionnaire-screen/single-questionnaire-screen.component';
 import { AnswerQuestionnaireScreenComponent } from './components/screens/answer-questionnaire-screen/answer-questionnaire-screen.component';
 import { DashboardScreenComponent } from './components/screens/dashboard-screen/dashboard-screen.component';
+import { QuestionnaireIdComponent } from './components/screens/questionnaire-id/questionnaire-id.component';
 
 
 
@@ -40,6 +44,7 @@ import { DashboardScreenComponent } from './components/screens/dashboard-screen/
     SingleQuestionnaireScreenComponent,
     AnswerQuestionnaireScreenComponent,
     DashboardScreenComponent,
+    QuestionnaireIdComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,6 +57,9 @@ import { DashboardScreenComponent } from './components/screens/dashboard-screen/
     HttpClientModule,
     MatDialogModule,
     MatSnackBarModule,
+    ClipboardModule,
+    MatTableModule,
+    MatListModule,
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

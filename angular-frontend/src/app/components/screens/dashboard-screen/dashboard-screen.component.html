@@ -1,3 +1,8 @@
 <app-appbar></app-appbar>
+<button mat-raised-button class="create-button" (click)="onClickCreateQuestionnaire()">Create Questionnaire</button>
 
-<a routerLink="/Create-Questionnaire"><button mat-raised-button class="create-button" >Create Questionnaire</button></a>
+<mat-selection-list [multiple]="false" class="list">
+    <mat-list-option class="item" *ngFor="let questionnaire of questionnaires" [value]="questionnaire">
+      <div (click)="onSelectedQuestionnaire(questionnaire.id)">{{questionnaire.title}}</div>
+    </mat-list-option>
+</mat-selection-list>

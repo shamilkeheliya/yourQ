@@ -1,0 +1,20 @@
+<app-appbar></app-appbar>
+<body>
+
+  <div class="login-box" style="text-align: center;">
+    <h2>Your Questionnaire Link</h2>
+
+    <h3>You can share this Link with your friends to answer your Questionnaire</h3>
+
+    <div class="user-box">
+      <textarea cols="30" rows="1" [(ngModel)]="questionnaireURL" disabled></textarea>
+    </div>
+
+    <br>
+    <button [cdkCopyToClipboard]="questionnaireURL">Copy Link</button>
+
+    <br>
+    <button (click)="onClickViewResult()">View Results</button>
+  </div>
+
+</body>

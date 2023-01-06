@@ -1,5 +1,6 @@
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
+import { io } from 'socket.io-client';
 
 @Component({
   selector: 'app-single-questionnaire-screen',
@@ -8,11 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SingleQuestionnaireScreenComponent implements OnInit {
   id: string | undefined
+  ENDPOINT: string = 'http://localhost:3000'
 
   constructor(private route: ActivatedRoute) { }
 
-  ngOnInit(): void {
-    this.id = this.route.snapshot.paramMap.get('id')!
+  ngOnChanges(): void{
+
   }
+
+  ngOnInit(): void {
+    this.id = this.route.snapshot.paramMap.get('id')!;
+    var socket = io(this.ENDPOINT);
+  }
+
 
 }

@@ -2,6 +2,7 @@ export class QuestionnaireModel{
     _id: string | undefined;
 
     title: string | undefined;
+    owner: string | undefined;
 
     question1: string | undefined;
     q1a: string | undefined;

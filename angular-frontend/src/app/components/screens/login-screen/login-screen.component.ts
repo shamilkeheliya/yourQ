@@ -63,7 +63,7 @@ export class LoginScreenComponent implements OnInit {
         const userid: string = data?.uid;
 
         this.cookieService.set('uid', userid);
-        this.router.navigate(['Dashboard']);
+        this.router.navigate(['/Dashboard']);
 
         return;
       }

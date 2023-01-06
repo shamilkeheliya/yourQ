@@ -1,3 +1,6 @@
+import { AuthService } from './../../../services/auth.service';
+import { Router } from '@angular/router';
+import { QuestionnaireService } from './../../../services/questionnaire.service';
 import { QuestionnaireModel } from './../../../models/questionnaire-model';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
@@ -6,13 +9,17 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-create-questionnaire-screen',
   templateUrl: './create-questionnaire-screen.component.html',
-  styleUrls: ['./create-questionnaire-screen.component.css']
+  styleUrls: ['./create-questionnaire-screen.component.css'],
+  providers: [QuestionnaireModel]
 })
 export class CreateQuestionnaireScreenComponent implements OnInit {
 
   constructor(
     private snackBar: MatSnackBar,
     private questionnaireModel: QuestionnaireModel,
+    private questionnaireService: QuestionnaireService,
+    private router: Router,
+    private authService: AuthService,
     ) { }
 
   ngOnInit(): void {
@@ -108,9 +115,10 @@ export class CreateQuestionnaireScreenComponent implements OnInit {
       this.createNewQuestionnaire(form);
   }
 
-  createNewQuestionnaire(form: NgForm){
+  async createNewQuestionnaire(form: NgForm){
 
     this.questionnaireModel.title = form.value.title;
+    this.questionnaireModel.owner = this.authService.getUserID();
 
     this.questionnaireModel.question1 = form.value.question1;
     this.questionnaireModel.q1a = form.value.q1a;
@@ -141,6 +149,32 @@ export class CreateQuestionnaireScreenComponent implements OnInit {
     this.questionnaireModel.q5w1 = form.value.q5w1;
     this.questionnaireModel.q5w2 = form.value.q5w2;
     this.questionnaireModel.q5w3 = form.value.q5w3;
+
+
+    (await this.questionnaireService.createQuestionnaire(this.questionnaireModel)).subscribe(async (response) => {
+
+      if (response.status == 200) {
+        this.snackBar.open(
+          'Questionnaire created Successfully!',
+          'OK',
+          { duration: 2000 }
+        );
+
+        const data: any = await response.body;
+        const questionnaireid: string = await data?.id;
+
+        this.router.navigate(['/QuestionnaireID/' + questionnaireid]);
+      }
+      else{
+        this.snackBar.open(
+          'Cannont create Questionnaire!',
+          'OK',
+          { duration: 2000 }
+        );
+      }
+
+    });
+
   }
 
 }

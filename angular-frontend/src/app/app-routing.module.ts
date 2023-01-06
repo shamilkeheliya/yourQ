@@ -1,3 +1,4 @@
+import { QuestionnaireIdComponent } from './components/screens/questionnaire-id/questionnaire-id.component';
 import { DashboardScreenComponent } from './components/screens/dashboard-screen/dashboard-screen.component';
 import { AuthGuard } from './auth/auth.guard';
 import { SingleQuestionnaireScreenComponent } from './components/screens/single-questionnaire-screen/single-questionnaire-screen.component';
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'Dashboard', component: DashboardScreenComponent, canActivate: [AuthGuard] },
 
   { path: 'Create-Questionnaire', component: CreateQuestionnaireScreenComponent, canActivate: [AuthGuard] },
+  { path: 'QuestionnaireID/:id', component: QuestionnaireIdComponent, canActivate: [AuthGuard] },
   { path: ':id', component: AnswerQuestionnaireScreenComponent, canActivate: [AuthGuard] },
 
   { path: '**', component: ErrorScreenComponent}

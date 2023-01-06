@@ -1,4 +1,18 @@
 .create-button{
-    margin-top: 20px;
-    left: 80%;
+    margin-top: 15px;
+    left: 20px;
 }
+
+.item{
+  background-color: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+
+  margin-bottom: 5px;
+}
+
+.list{
+  padding: 15px;
+}
+
