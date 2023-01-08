@@ -10,7 +10,7 @@ import { WebsocketService } from 'src/app/services/websocket.service';
 })
 export class SingleQuestionnaireScreenComponent implements OnInit {
 
-  answersData: any | undefined;
+  answersData: any = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -28,9 +28,7 @@ export class SingleQuestionnaireScreenComponent implements OnInit {
 
   getData(){
     this.webSocketService.listen('questionnaire').subscribe((data)=>{
-      console.log(data);
       this.answersData = data;
-      console.log(this.answersData);
     });
 
     this.webSocketService.emit('questionnaire', {id: this.route.snapshot.paramMap.get('id')!});
