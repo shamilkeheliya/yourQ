@@ -7,7 +7,9 @@ const dbURL = process.env.MONGODB;
 const app = require("./app");
 const routes = require("./routes");
 
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
+
+const AnswerModel = require('../express-backend/model/answer-model')
 
 
 mongoose.connect(dbURL)
@@ -22,6 +24,9 @@ mongoose.connect(dbURL)
     app.use(cors());
 
 
+    // 
+    // SOCKET.IO
+    //
     const io = require('socket.io')(server,{
         pingTimeout: 60000,
         cors: {
@@ -29,10 +34,23 @@ mongoose.connect(dbURL)
         },
     });
 
-    io.on('connection', function (socket){
+    io.on('connection', (socket) => {
         console.log('socket connected');
 
-        socket.emit('eventName', {id:'2345678'});
+        socket.on('questionnaire', async (qData) => {
+            socket.join(qData.id);
+
+            const data = await AnswerModel.find({ questionnaire: qData.id }).sort({ marks: -1 });
+            socket.emit('questionnaire', data);
+
+            changeStream = AnswerModel.watch();
+            changeStream.on('change', async next =>{
+                const data = await AnswerModel.find({ questionnaire: qData.id }).sort({ marks: -1 });
+                socket.emit('questionnaire', data);
+            });
+
+        });
+
     });
 
     

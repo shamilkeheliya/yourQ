@@ -1,2 +1,33 @@
 <app-appbar></app-appbar>
-<p>single-questionnaire-screen works!</p>
+
+<div>
+  <div class="answersCount">
+    <h2>ANSWERS COUNT</h2>
+    <h1>{{answersData.length}}</h1>
+
+    <br>
+    <button mat-raised-button (click)="onClickShare()">Share Questionnaire</button>
+  </div>
+</div>
+
+
+<div class="dataTable">
+
+  <table  class="table table-striped-columns">
+    <thead>
+      <tr class="table-dark">
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col">Marks</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-dark" *ngFor="let data of answersData; let i = index">
+        <th scope="row">{{i+1}}</th>
+        <td class="table-dark">{{data['answererName']}}</td>
+        <td class="table-dark">{{data['marks']}}%</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

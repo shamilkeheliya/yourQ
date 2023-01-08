@@ -1,4 +1,4 @@
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { io } from 'socket.io-client';
 import { WebsocketService } from 'src/app/services/websocket.service';
@@ -9,28 +9,33 @@ import { WebsocketService } from 'src/app/services/websocket.service';
   styleUrls: ['./single-questionnaire-screen.component.css']
 })
 export class SingleQuestionnaireScreenComponent implements OnInit {
-  id: string | undefined
-  //ENDPOINT: string = 'http://localhost:3000'
+
+  answersData: any | undefined;
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private webSocketService: WebsocketService,
     ) { }
 
-  ngOnChanges(): void{
-
-  }
-
   ngOnInit(): void {
-    this.id = this.route.snapshot.paramMap.get('id')!;
-    //var socket = io(this.ENDPOINT);
     this.getData();
   }
 
-  getData(){
-    this.webSocketService.listen('eventName').subscribe((data)=>{
-      console.log(data);
-    });
+  onClickShare(){
+    this.router.navigate(['/QuestionnaireID/' + this.route.snapshot.paramMap.get('id')!]);
   }
+
+  getData(){
+    this.webSocketService.listen('questionnaire').subscribe((data)=>{
+      console.log(data);
+      this.answersData = data;
+      console.log(this.answersData);
+    });
+
+    this.webSocketService.emit('questionnaire', {id: this.route.snapshot.paramMap.get('id')!});
+  }
+
+
 
 }

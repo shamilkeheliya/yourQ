@@ -1,0 +1,18 @@
+.answersCount{
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  border-radius: 10px;
+  width: 220px;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  margin: 10px auto;
+  margin-bottom: 20px;
+}
+
+.dataTable{
+  margin: 10px;
+  border-radius: 10px;
+}
+
