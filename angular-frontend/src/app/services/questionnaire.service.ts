@@ -38,4 +38,16 @@ export class QuestionnaireService {
       },
     );
   }
+
+  async getQuestionnaire(id: string){
+
+    return this.http.get(
+      environment.env.API_URL + '/questionnaire/' + id,
+      {
+        headers: environment.env.API_HEADER,
+        responseType: 'json',
+        observe: 'response',
+      },
+    );
+  }
 }

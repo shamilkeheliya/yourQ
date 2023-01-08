@@ -48,7 +48,7 @@ questionnaire.post('/create', async (req, res)=>{
 
     }
     catch (error) {
-        res.status(400).json({ message: error.message })
+        res.status(400).json({ message: error.message });
     }
 });
 
@@ -64,6 +64,19 @@ questionnaire.get("/all/:uid", async (req,res)=>{
         });
 
         res.status(200).json(selectedData);
+    }
+    catch{
+        res.status(400).json({ message: error.message });
+    }
+    
+});
+
+questionnaire.get("/:id", async (req,res)=>{
+
+    try{
+        const data = await QuestionnaireModel.find({_id : req.params.id});
+
+        res.status(200).json(data[0]);
     }
     catch{
         res.status(400).json({ message: error.message });

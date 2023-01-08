@@ -14,7 +14,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
-import {MatListModule} from '@angular/material/list';
+import { MatListModule } from '@angular/material/list';
+import { MatRadioModule } from '@angular/material/radio';
 import { ClipboardModule } from '@angular/cdk/clipboard';
 
 import { HomeScreenComponent } from './components/screens/home-screen/home-screen.component';
@@ -60,6 +61,7 @@ import { QuestionnaireIdComponent } from './components/screens/questionnaire-id/
     ClipboardModule,
     MatTableModule,
     MatListModule,
+    MatRadioModule,
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

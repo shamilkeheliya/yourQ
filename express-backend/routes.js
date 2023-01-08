@@ -3,6 +3,7 @@ const routes = express.Router();
 
 const user = require('./routes/user');
 const questionnaire = require('./routes/questionnaire');
+const answer = require('./routes/answer');
 
 routes.use((req, res, next)=>{
     const apiKye = req.get('API-Key');
@@ -16,5 +17,6 @@ routes.use((req, res, next)=>{
 
 routes.use('/user', user);
 routes.use('/questionnaire', questionnaire);
+routes.use('/answer', answer);
 
 module.exports = routes;

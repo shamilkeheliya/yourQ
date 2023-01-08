@@ -52,7 +52,6 @@ export class DashboardScreenComponent implements OnInit {
 
   onSelectedQuestionnaire(id: String){
     this.router.navigate(['/View/' + id]);
-
   }
 
   onClickCreateQuestionnaire(){

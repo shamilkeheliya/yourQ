@@ -28,6 +28,18 @@ export class AuthService {
     return this.cookieService.get('uid');
   }
 
+  async getUserName(){
+
+    return this.http.get(
+      environment.env.API_URL + '/user/name/' + this.getUserID(),
+      {
+        headers: environment.env.API_HEADER,
+        responseType: 'json',
+        observe: 'response',
+      },
+    );
+  }
+
   async createUser(userModel: UserModel){
 
       return this.http.post(

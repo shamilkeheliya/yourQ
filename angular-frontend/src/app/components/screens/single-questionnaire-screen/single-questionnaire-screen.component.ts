@@ -1,6 +1,7 @@
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { io } from 'socket.io-client';
+import { WebsocketService } from 'src/app/services/websocket.service';
 
 @Component({
   selector: 'app-single-questionnaire-screen',
@@ -9,9 +10,12 @@ import { io } from 'socket.io-client';
 })
 export class SingleQuestionnaireScreenComponent implements OnInit {
   id: string | undefined
-  ENDPOINT: string = 'http://localhost:3000'
+  //ENDPOINT: string = 'http://localhost:3000'
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(
+    private route: ActivatedRoute,
+    private webSocketService: WebsocketService,
+    ) { }
 
   ngOnChanges(): void{
 
@@ -19,8 +23,14 @@ export class SingleQuestionnaireScreenComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id')!;
-    var socket = io(this.ENDPOINT);
+    //var socket = io(this.ENDPOINT);
+    this.getData();
   }
 
+  getData(){
+    this.webSocketService.listen('eventName').subscribe((data)=>{
+      console.log(data);
+    });
+  }
 
 }

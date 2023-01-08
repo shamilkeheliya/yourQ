@@ -35,23 +35,6 @@ user.post('/create', async (req, res) => {
 
 });
 
-// user.get('/getuserid', async(req, res)=>{
-//     try{
-//         const data = await UserModel.find({email : req.query.email});
-
-//         if(data.length > 0){
-//             res.status(200).json({ uid : data[0]['id']});
-//             return;
-//         }else{
-//             res.status(300).json({message: 'Cannot create account!'});
-//         }
-//     }
-//     catch(error){
-//         res.status(500).json({message: error.message})
-//     }
-// });
-
-
 user.post('/login', async(req, res)=>{
     try{
         const data = await UserModel.find({email : req.body.email});
@@ -73,6 +56,18 @@ user.post('/login', async(req, res)=>{
     }
     catch(error){
         res.status(500).json({message: error.message})
+    }
+});
+
+user.get('/name/:uid', async(req, res)=>{
+
+    try{
+        const data = await UserModel.find({_id : req.params.uid});
+
+        res.status(200).json({firstName: data[0]['firstName'], lastName: data[0]['lastName']});
+    }
+    catch{
+        res.status(400).json({ message: error.message });
     }
 });
 

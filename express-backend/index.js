@@ -12,6 +12,7 @@ var bodyParser = require('body-parser')
 
 mongoose.connect(dbURL)
 .then(() => {
+
     const server = app.listen(3000, ()=>{
         console.log("DB connected", port);
     });
@@ -20,16 +21,20 @@ mongoose.connect(dbURL)
     app.use(bodyParser.json());
     app.use(cors());
 
-    // const io = require('socket.io')(server,{
-    //     pingTimeout: 60000,
-    //     cors: {
-    //         origin: "http://localhost:3000",
-    //     },
-    // });
-    
-    // io.on("connection",(socket) => {
-    //     console.log("connected to the socket.io");
-    // });
+
+    const io = require('socket.io')(server,{
+        pingTimeout: 60000,
+        cors: {
+            origin: "http://localhost:4200",
+        },
+    });
+
+    io.on('connection', function (socket){
+        console.log('socket connected');
+
+        socket.emit('eventName', {id:'2345678'});
+    });
+
     
     app.use((req, res, next)=>{
         const apiKye = req.get('API-Key');

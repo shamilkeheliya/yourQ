@@ -79,6 +79,13 @@ export class CreateAccountScreenComponent implements OnInit {
 
         return;
       }
+      else{
+        this.snackBar.open(
+          'Cannot create Account!',
+          'OK',
+          { duration: 2000 }
+        );
+      }
 
     });
   }
