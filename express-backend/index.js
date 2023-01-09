@@ -9,7 +9,9 @@ const routes = require("./routes");
 
 var bodyParser = require('body-parser');
 
-const AnswerModel = require('../express-backend/model/answer-model')
+const AnswerModel = require('./model/answer-model');
+
+
 
 
 mongoose.connect(dbURL)
@@ -22,6 +24,10 @@ mongoose.connect(dbURL)
     app.use(bodyParser.urlencoded({ extended: false }));
     app.use(bodyParser.json());
     app.use(cors());
+
+    app.get('/h', async(req,res)=>{
+        res.status(400).json({message:'hello'});
+    });
 
 
     // 
@@ -66,3 +72,5 @@ mongoose.connect(dbURL)
  
     app.use('/api', routes);
 });
+
+module.exports = app;

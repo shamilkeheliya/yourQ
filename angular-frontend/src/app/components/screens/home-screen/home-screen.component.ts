@@ -2,6 +2,7 @@ import { AuthService } from './../../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { CookieService } from 'ngx-cookie-service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home-screen',
@@ -9,18 +10,15 @@ import { CookieService } from 'ngx-cookie-service';
   styleUrls: ['./home-screen.component.css']
 })
 export class HomeScreenComponent implements OnInit {
-  data: any | undefined
 
-  constructor(private auth: AuthService,
-    private cookieService: CookieService,) { }
+  constructor(
+    private router: Router,
+    ) { }
 
   async ngOnInit(): Promise<void> {
-
-    // (await this.auth.loginUser()).subscribe((data)=>{
-    //   this.data = data.body;
-    // });
-
-    this.data=this.cookieService.get('uid');
   }
 
+  onClickCreateQuestionnaire(){
+    this.router.navigate(['/Create-Questionnaire']);
+  }
 }

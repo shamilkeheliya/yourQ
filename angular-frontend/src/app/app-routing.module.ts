@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: 'QuestionnaireID/:id', component: QuestionnaireIdComponent, canActivate: [AuthGuard] },
   { path: ':id', component: AnswerQuestionnaireScreenComponent, canActivate: [AuthGuard] },
 
-  { path: '**', component: ErrorScreenComponent}
+  { path: '**', component: ErrorScreenComponent }
 ];
 
 @NgModule({

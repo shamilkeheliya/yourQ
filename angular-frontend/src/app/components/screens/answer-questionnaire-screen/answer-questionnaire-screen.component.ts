@@ -51,7 +51,7 @@ export class AnswerQuestionnaireScreenComponent implements OnInit {
 
         this.questionnaireData = response.body;
 
-        console.log(this.questionnaireData['_id']);
+        //console.log(this.questionnaireData['_id']);
 
         this.setQuestionniar();
         return;
@@ -63,7 +63,6 @@ export class AnswerQuestionnaireScreenComponent implements OnInit {
           'OK',
           { duration: 2000 }
         );
-
         return;
       }
 

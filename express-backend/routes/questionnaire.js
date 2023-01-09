@@ -78,7 +78,7 @@ questionnaire.get("/:id", async (req,res)=>{
 
         res.status(200).json(data[0]);
     }
-    catch{
+    catch(error){
         res.status(400).json({ message: error.message });
     }
     
