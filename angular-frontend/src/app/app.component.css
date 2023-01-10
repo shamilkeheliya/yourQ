@@ -1,6 +1,8 @@
+.sky{
+  opacity: 0.5;
+}
 
 .stars {
-  opacity: 0.5;
   z-index: 10;
   width: 1px;
   height: 1px;

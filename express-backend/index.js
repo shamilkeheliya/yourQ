@@ -26,7 +26,7 @@ mongoose.connect(dbURL)
     app.use(cors());
 
     app.get('/h', async(req,res)=>{
-        res.status(400).json({message:'hello'});
+        res.status(200).json({message:'hello'});
     });
 
 
