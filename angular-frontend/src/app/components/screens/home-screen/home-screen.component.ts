@@ -1,7 +1,4 @@
-import { AuthService } from './../../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
-import { environment } from 'src/environments/environment';
-import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 
 @Component({

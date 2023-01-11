@@ -1,4 +1,4 @@
-import { AuthService } from './auth.service';
+import { UserService } from './user.service';
 import { QuestionnaireModel } from './../models/questionnaire-model';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -11,7 +11,7 @@ export class QuestionnaireService {
 
   constructor(
     private http: HttpClient,
-    private authService: AuthService,
+    private userService: UserService,
   ) { }
 
   async createQuestionnaire(questionnaireModel: QuestionnaireModel){
@@ -30,7 +30,7 @@ export class QuestionnaireService {
   async getAllQuestionnaires(){
 
     return this.http.get(
-      environment.env.API_URL + '/questionnaire/all/' + this.authService.getUserID(),
+      environment.env.API_URL + '/questionnaire/all/' + this.userService.getUserID(),
       {
         headers: environment.env.API_HEADER,
         responseType: 'json',

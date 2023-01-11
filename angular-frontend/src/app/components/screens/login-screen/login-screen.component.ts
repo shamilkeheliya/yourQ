@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { UserModel } from 'src/app/models/user-model';
-import { AuthService } from 'src/app/services/auth.service';
+import { UserService } from 'src/app/services/user.service';
 import { CookieService } from 'ngx-cookie-service';
 
 @Component({
@@ -17,7 +17,7 @@ export class LoginScreenComponent implements OnInit {
   constructor(
     private snackBar: MatSnackBar,
     private userModel: UserModel,
-    private authService: AuthService,
+    private userService: UserService,
     private router: Router,
     private cookieService: CookieService,
     ) { }
@@ -50,7 +50,7 @@ export class LoginScreenComponent implements OnInit {
     this.userModel.email = form.value.email;
     this.userModel.password = form.value.password;
 
-    (await this.authService.loginUser(this.userModel)).subscribe((response) => {
+    (await this.userService.loginUser(this.userModel)).subscribe((response) => {
 
       if (response.status == 200) {
         this.snackBar.open(

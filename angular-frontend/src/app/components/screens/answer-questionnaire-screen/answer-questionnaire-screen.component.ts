@@ -1,5 +1,5 @@
 import { AnswerModel } from './../../../models/answers-model';
-import { AuthService } from 'src/app/services/auth.service';
+import { UserService } from 'src/app/services/user.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { QuestionnaireService } from './../../../services/questionnaire.service';
 
@@ -33,7 +33,7 @@ export class AnswerQuestionnaireScreenComponent implements OnInit {
     private route: ActivatedRoute,
     private questionnaireService: QuestionnaireService,
     private snackBar: MatSnackBar,
-    private authService: AuthService,
+    private userService: UserService,
     private answerService: AnswerService,
     private answerModel: AnswerModel,
     private router: Router,
@@ -125,7 +125,7 @@ export class AnswerQuestionnaireScreenComponent implements OnInit {
       return;
     }
 
-    (await this.authService.getUserName()).subscribe((response) => {
+    (await this.userService.getUserName()).subscribe((response) => {
 
       if (response.status == 200) {
 
@@ -173,7 +173,7 @@ export class AnswerQuestionnaireScreenComponent implements OnInit {
     }
 
     this.answerModel.questionnaire = this.questionnaireData['_id'];
-    this.answerModel.answerer = this.authService.getUserID();
+    this.answerModel.answerer = this.userService.getUserID();
     this.answerModel.answererName = answererName;
     this.answerModel.marks = this.marks*20;
 

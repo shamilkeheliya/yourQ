@@ -1,4 +1,4 @@
-import { AuthService } from './../../../services/auth.service';
+import { UserService } from '../../../services/user.service';
 import { Router } from '@angular/router';
 import { QuestionnaireService } from './../../../services/questionnaire.service';
 import { QuestionnaireModel } from './../../../models/questionnaire-model';
@@ -19,7 +19,7 @@ export class CreateQuestionnaireScreenComponent implements OnInit {
     private questionnaireModel: QuestionnaireModel,
     private questionnaireService: QuestionnaireService,
     private router: Router,
-    private authService: AuthService,
+    private userService: UserService,
     ) { }
 
   ngOnInit(): void {
@@ -118,7 +118,7 @@ export class CreateQuestionnaireScreenComponent implements OnInit {
   async createNewQuestionnaire(form: NgForm){
 
     this.questionnaireModel.title = form.value.title;
-    this.questionnaireModel.owner = this.authService.getUserID();
+    this.questionnaireModel.owner = this.userService.getUserID();
 
     this.questionnaireModel.question1 = form.value.question1;
     this.questionnaireModel.q1a = form.value.q1a;

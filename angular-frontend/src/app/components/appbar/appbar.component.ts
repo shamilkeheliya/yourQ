@@ -1,4 +1,4 @@
-import { AuthService } from 'src/app/services/auth.service';
+import { UserService } from 'src/app/services/user.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -9,13 +9,13 @@ import { Component, OnInit } from '@angular/core';
 export class AppbarComponent implements OnInit {
   isLoggedIn: boolean = false;
 
-  constructor(private authService: AuthService) { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    this.isLoggedIn = this.authService.isAuthenticated();
+    this.isLoggedIn = this.userService.isAuthenticated();
   }
 
   onClickLogOut(){
-    this.authService.logoutUser();
+    this.userService.logoutUser();
   }
 }

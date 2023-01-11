@@ -2,7 +2,7 @@ import { UserModel } from './../../../models/user-model';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { AuthService } from 'src/app/services/auth.service';
+import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -16,7 +16,7 @@ export class CreateAccountScreenComponent implements OnInit {
   constructor(
     private snackBar: MatSnackBar,
     private userModel: UserModel,
-    private authService: AuthService,
+    private userService: UserService,
     private router: Router,
     ) { }
 
@@ -66,7 +66,7 @@ export class CreateAccountScreenComponent implements OnInit {
     this.userModel.email = form.value.email;
     this.userModel.password = form.value.password;
 
-    (await this.authService.createUser(this.userModel)).subscribe((response) => {
+    (await this.userService.createUser(this.userModel)).subscribe((response) => {
 
       if (response.status == 200) {
         this.snackBar.open(

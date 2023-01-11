@@ -1,7 +1,6 @@
 import { AnswerModel } from './../models/answers-model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AuthService } from './auth.service';
 import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
@@ -10,8 +9,7 @@ import { environment } from 'src/environments/environment.prod';
 export class AnswerService {
 
   constructor(
-    private http: HttpClient,
-    private authService: AuthService,) { }
+    private http: HttpClient,) { }
 
   async createAnswer(answerModel: AnswerModel){
 

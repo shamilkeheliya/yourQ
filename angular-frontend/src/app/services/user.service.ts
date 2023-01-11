@@ -1,5 +1,5 @@
-import { environment } from './../../environments/environment.prod';
-import { UserModel } from './../models/user-model';
+import { environment } from '../../environments/environment.prod';
+import { UserModel } from '../models/user-model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 
-export class AuthService {
+export class UserService {
 
   response: any | undefined;
 
