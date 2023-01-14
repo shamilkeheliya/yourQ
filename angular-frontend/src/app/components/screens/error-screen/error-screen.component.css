@@ -34,7 +34,6 @@ body {
   transform-box: fill-box;
 }
 
-/*************swing************/
 @keyframes swing {
   0% {
     transform: rotate(10deg);
@@ -44,7 +43,6 @@ body {
   }
 }
 
-/*************swing hair************/
 @keyframes swinghair {
   0% {
     transform: rotate(6deg);

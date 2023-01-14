@@ -1,4 +1,4 @@
-.answersCount{
+.answersCount {
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
   background: rgba(0, 0, 0, 0.5);
   box-sizing: border-box;
@@ -11,8 +11,7 @@
   margin-bottom: 20px;
 }
 
-.dataTable{
+.dataTable {
   margin: 10px;
   border-radius: 10px;
 }
-
