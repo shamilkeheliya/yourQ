@@ -3,15 +3,16 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SingleQuestionnaireScreenComponent } from './single-questionnaire-screen.component';
+import { AppbarComponent } from '../../appbar/appbar.component';
 
-describe('SingleQuestionnaireScreenComponent', () => {
+describe('Single Questionnaire Screen', () => {
   let component: SingleQuestionnaireScreenComponent;
   let fixture: ComponentFixture<SingleQuestionnaireScreenComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [RouterTestingModule, HttpClientModule],
-      declarations: [ SingleQuestionnaireScreenComponent ]
+      declarations: [ SingleQuestionnaireScreenComponent , AppbarComponent]
     })
     .compileComponents();
 
@@ -20,7 +21,7 @@ describe('SingleQuestionnaireScreenComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Single Questionnaire Screen should create', () => {
     expect(component).toBeTruthy();
   });
 });

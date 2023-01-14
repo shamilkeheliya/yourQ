@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ErrorScreenComponent } from './error-screen.component';
 
-describe('ErrorScreenComponent', () => {
+describe('Error Screen', () => {
   let component: ErrorScreenComponent;
   let fixture: ComponentFixture<ErrorScreenComponent>;
 
@@ -17,7 +17,7 @@ describe('ErrorScreenComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Error Screen should create', () => {
     expect(component).toBeTruthy();
   });
 });

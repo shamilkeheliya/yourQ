@@ -1,14 +1,16 @@
+import { HttpClientModule } from '@angular/common/http';
+import { AppbarComponent } from './../../appbar/appbar.component';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { HomeScreenComponent } from './home-screen.component';
 
-describe('HomeScreenComponent', () => {
+describe('Home Screen', () => {
   let component: HomeScreenComponent;
   let fixture: ComponentFixture<HomeScreenComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomeScreenComponent ]
+      imports: [HttpClientModule],
+      declarations: [ HomeScreenComponent , AppbarComponent]
     })
     .compileComponents();
 
@@ -17,7 +19,7 @@ describe('HomeScreenComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Home Screen should create', () => {
     expect(component).toBeTruthy();
   });
 

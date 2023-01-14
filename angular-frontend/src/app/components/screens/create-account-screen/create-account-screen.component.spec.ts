@@ -2,17 +2,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { AppbarComponent } from '../../appbar/appbar.component';
 
 import { CreateAccountScreenComponent } from './create-account-screen.component';
 
-describe('CreateAccountScreenComponent', () => {
+describe('Create Account Screen', () => {
   let component: CreateAccountScreenComponent;
   let fixture: ComponentFixture<CreateAccountScreenComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [MatSnackBarModule, HttpClientModule, FormsModule],
-      declarations: [ CreateAccountScreenComponent ]
+      declarations: [ CreateAccountScreenComponent , AppbarComponent]
     })
     .compileComponents();
 
@@ -21,7 +22,7 @@ describe('CreateAccountScreenComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Create Account Screen should create', () => {
     expect(component).toBeTruthy();
   });
 });

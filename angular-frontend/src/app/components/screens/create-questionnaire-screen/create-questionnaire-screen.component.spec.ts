@@ -4,15 +4,16 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CreateQuestionnaireScreenComponent } from './create-questionnaire-screen.component';
 import { FormsModule } from '@angular/forms';
+import { AppbarComponent } from '../../appbar/appbar.component';
 
-describe('CreateQuestionnaireScreenComponent', () => {
+describe('Create Questionnaire Screen', () => {
   let component: CreateQuestionnaireScreenComponent;
   let fixture: ComponentFixture<CreateQuestionnaireScreenComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [MatSnackBarModule, HttpClientModule, FormsModule],
-      declarations: [ CreateQuestionnaireScreenComponent ]
+      declarations: [ CreateQuestionnaireScreenComponent , AppbarComponent]
     })
     .compileComponents();
 
@@ -21,7 +22,7 @@ describe('CreateQuestionnaireScreenComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('Create Questionnaire Screen should create', () => {
     expect(component).toBeTruthy();
   });
 });

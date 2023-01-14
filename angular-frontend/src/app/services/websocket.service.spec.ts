@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { WebsocketService } from './websocket.service';
 
-describe('WebsocketService', () => {
+describe('Websocket Service', () => {
   let service: WebsocketService;
 
   beforeEach(() => {
@@ -13,7 +13,7 @@ describe('WebsocketService', () => {
     service = TestBed.inject(WebsocketService);
   });
 
-  it('should be created', () => {
+  it('Websocket Service should work', () => {
     expect(service).toBeTruthy();
   });
 });
