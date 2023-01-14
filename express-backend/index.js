@@ -7,7 +7,7 @@ const dbURL = process.env.MONGODB;
 const app = require("./app");
 const routes = require("./routes");
 
-var bodyParser = require('body-parser');
+let bodyParser = require('body-parser');
 
 const AnswerModel = require('./model/answer-model');
 

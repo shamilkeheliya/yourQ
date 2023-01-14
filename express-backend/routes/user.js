@@ -38,7 +38,7 @@ user.post('/login', async(req, res)=>{
     try{
         const data = await UserModel.find({email : req.body.email});
         
-        if(data.length == 0){
+        if(data.length === 0){
             res.status(401).json({message: 'Login failed!'});
             return;
         }

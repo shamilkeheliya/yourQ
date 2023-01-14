@@ -73,10 +73,10 @@ body {
   color: #fff;
   border-radius: 5px;
   box-shadow:
-  0 0 5px #8b15ba,
-  0 0 25px #8b15ba,
-  0 0 50px #8b15ba,
-  0 0 100px #8b15ba;
+    0 0 5px #8b15ba,
+    0 0 25px #8b15ba,
+    0 0 50px #8b15ba,
+    0 0 100px #8b15ba;
 }
 
 .login-box a span {
@@ -196,11 +196,6 @@ body {
     0 0 100px #8b15ba;
 }
 
-.login-box button span {
-  position: absolute;
-  display: block;
-}
-
 .login-box button span:nth-child(1) {
   top: 0;
   left: -100%;
@@ -208,6 +203,11 @@ body {
   height: 2px;
   background: linear-gradient(90deg, transparent, #8b15ba);
   animation: btn-anim1 1s linear infinite;
+}
+
+.login-box button span {
+  position: absolute;
+  display: block;
 }
 
 @keyframes btn-anim1 {
