@@ -53,7 +53,6 @@ export class UserService {
       );
   }
 
-
   async loginUser(userModel: UserModel){
 
     return this.http.post(

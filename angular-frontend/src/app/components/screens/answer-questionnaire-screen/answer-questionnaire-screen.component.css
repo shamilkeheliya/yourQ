@@ -11,6 +11,7 @@ body {
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
   border-radius: 10px;
   margin-bottom: 5px;
+  margin: 0 auto;
 }
 
 .login-box h2 {

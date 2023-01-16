@@ -65,7 +65,7 @@ user.get('/name/:uid', async(req, res)=>{
 
         res.status(200).json({firstName: data[0]['firstName'], lastName: data[0]['lastName']});
     }
-    catch{
+    catch(error){
         res.status(400).json({ message: error.message });
     }
 });

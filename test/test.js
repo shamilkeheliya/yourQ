@@ -11,7 +11,6 @@ chai.use(chaiHttp);
 describe("Test User API", function () {
   let uid;
 
-  // Change email before start every test or remove user from database
   let user =  {
         firstName: 'Test-First-Name',
         lastName: 'Test-Last-Name',

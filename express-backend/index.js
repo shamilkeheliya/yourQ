@@ -11,9 +11,6 @@ let bodyParser = require('body-parser');
 
 const AnswerModel = require('./model/answer-model');
 
-
-
-
 mongoose.connect(dbURL)
 .then(() => {
 
@@ -25,14 +22,7 @@ mongoose.connect(dbURL)
     app.use(bodyParser.json());
     app.use(cors());
 
-    app.get('/h', async(req,res)=>{
-        res.status(200).json({message:'hello'});
-    });
-
-
-    // 
     // SOCKET.IO
-    //
     const io = require('socket.io')(server,{
         pingTimeout: 60000,
         cors: {
@@ -58,7 +48,6 @@ mongoose.connect(dbURL)
         });
 
     });
-
     
     app.use((req, res, next)=>{
         const apiKye = req.get('API-Key');
